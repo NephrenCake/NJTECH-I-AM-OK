@@ -250,6 +250,7 @@ if __name__ == '__main__':
         # python -u NJTECH-I-AM-OK.py --mode "1"
     elif opt.mode == "2":
         gf.health()
+        gf.login()
         # python -u NJTECH-I-AM-OK.py --mode "2"
     elif opt.mode == "3":
         schedule.every().day.at("07:00:00").do(gf.health)
