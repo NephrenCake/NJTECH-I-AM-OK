@@ -1,0 +1,14 @@
+{
+  "loginInfo": {
+    "username": "",
+    "password": "",
+    "channelshow": "中国电信"
+  },
+  "email": {
+    "sender": "@qq.com",
+    "passwd": "",
+    "receivers": ["@qq.com"],
+    "host": "smtp.qq.com",
+    "port": 465
+  }
+}

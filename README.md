@@ -1,2 +1,29 @@
 # NJTECH-I-AM-OK
-njtech健康打卡
+> I'm in good health.
+>
+> Thank you for caring about me all the time.
+
+## Usage
+
+1. `pip install requirements.txt`
+
+2. ```json
+   > config.json
+   {
+     "loginInfo": {
+       "username": "111111111111",
+       "password": "xxxxxxxxxxxx",
+       "channelshow": "中国电信/中国移动/校园内网"
+     },
+     "email": {
+       "sender": "22222222@qq.com",
+       "passwd": "aaaaaaaaaa",
+       "receivers": ["22222222@qq.com"],
+       "host": "smtp.qq.com",
+       "port": 465
+     }
+   }
+   ```
+
+3. `python -u NJTECH-I-AM-OK.py --mode "2"`
+

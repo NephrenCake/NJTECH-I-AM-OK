@@ -1,0 +1,4 @@
+schedule==1.1.0
+requests==2.25.1
+ddddocr==1.4.7
+beautifulsoup4==4.11.1
