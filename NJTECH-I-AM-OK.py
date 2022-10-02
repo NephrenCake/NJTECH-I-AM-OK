@@ -155,7 +155,10 @@ class GoldenFairy:
         self.logger.info("开始健康打卡")
 
         service = "http://pdc.njtech.edu.cn/#/dform/genericForm/wbfjIwyK"
-        response = self.login(service=service, channelshow="校园内网")
+        self.login(service=service, channelshow=None)
+        self.logout()
+        time.sleep(5)  # todo 很怪但是work
+        response = self.login(service=service, channelshow=None)
 
         # 1. 获取 token
         ticket = response.headers['Location'].split('?ticket=')[-1].split('#/')[0]
@@ -250,7 +253,6 @@ if __name__ == '__main__':
         # python -u NJTECH-I-AM-OK.py --mode "1"
     elif opt.mode == "2":
         gf.health()
-        gf.login()
         # python -u NJTECH-I-AM-OK.py --mode "2"
     elif opt.mode == "3":
         schedule.every().day.at("07:00:00").do(gf.health)
