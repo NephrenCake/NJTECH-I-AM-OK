@@ -7,8 +7,9 @@
 
 1. `pip install requirements.txt`
 
-2. ```json
-   > config.json
+2. configure your `config.json`
+
+   ```json
    {
      "loginInfo": {
        "username": "111111111111",
