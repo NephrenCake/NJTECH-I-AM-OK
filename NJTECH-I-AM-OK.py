@@ -192,6 +192,7 @@ class GoldenFairy:
             headers=self.headers,
         )
         last_data: dict = json.loads(response.content)["data"][0]
+        # print(last_data)
 
         # 4. 发送表单数据
         if 'ONEIMAGEUPLOAD_KWYTQFT3' not in last_data or 'ONEIMAGEUPLOAD_KWYTQFT5' not in last_data:
@@ -217,6 +218,7 @@ class GoldenFairy:
                 "ONEIMAGEUPLOAD_KWYTQFT3": last_data['ONEIMAGEUPLOAD_KWYTQFT3'][1:-1].split(', '),  # 健康码
                 "ONEIMAGEUPLOAD_KWYTQFT5": last_data['ONEIMAGEUPLOAD_KWYTQFT5'][1:-1].split(', '),  # 行程码
                 "LOCATION_KWYTQFT7": last_data['LOCATION_KWYTQFT7'],  # 定位
+                "DATEPICKER_L8Z744C5": last_data['DATEPICKER_L8Z744C5']  # 最后核酸日期
             },
             "formWid": wid,
             "userId": "AM@" + str(int(time.time() * 1000)),
@@ -244,7 +246,7 @@ class GoldenFairy:
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--mode', type=str, default='1', help='1: 仅连接校园网  2: 连接校园网并打卡  3: 定时打卡')
+    parser.add_argument('--mode', type=str, default='2', help='1: 仅连接校园网  2: 连接校园网并打卡  3: 定时打卡')
     opt = parser.parse_args()
 
     gf = GoldenFairy()
